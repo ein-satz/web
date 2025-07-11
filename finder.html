@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⸢ Ein Satz ⸥ für Sachsen</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #ffba97;
+    }
+    .content-box {
+      background-color: white;
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+    h1 {
+      text-align: center;
+      color: hotpink;
+      font-size: 2.5rem;
+    }
+    .controls {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .pdf-viewer {
+      width: 100%;
+      height: 80vh;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <ul style="list-style-type: none; padding-left: 1rem;">
+    <li><a class="nav-link" href="index.html">Startseite</a></li>
+    <li><a class="nav-link" href="finder.html">⸢ Satz ⸥ - Finder</a></li>
+    <li><a class="nav-link" href="ueber.html">Über das Projekt</a></li>
+  </ul>
+</nav>
+
+  <div class="content-box">
+    <h1>⸢ Ein Satz ⸥ für Sachsen</h1>
+
+<div class="custom-dropdown-wrapper">
+  <div class="custom-dropdown" id="dropdown-fach">
+    <div class="custom-selected" data-value="">Fach wählen</div>
+    <div class="custom-options">
+      <div data-value="biologie">Biologie</div>
+      <div data-value="chemie">Chemie</div>
+      <div data-value="physik">Physik</div>
+    </div>
+  </div>
+
+  <div class="custom-dropdown" id="dropdown-jahrgang">
+    <div class="custom-selected" data-value="">Jahrgang wählen</div>
+    <div class="custom-options">
+      <div data-value="11-gk">Jahrgangsstufe 11 (GK)</div>
+      <div data-value="12-gk">Jahrgangsstufe 12 (GK)</div>
+      <div data-value="11-lk">Jahrgangsstufe 11 (LK)</div>
+      <div data-value="12-lk">Jahrgangsstufe 12 (LK)</div>
+    </div>
+  </div>
+</div>
+
+    <div class="controls">
+      
+      
+    </div>
+    <iframe id="pdfFrame" class="pdf-viewer" style="display: none;" frameborder="0"></iframe>
+  </div>
+
+  
+<div id="pdf-container"></div>
+
+<script>
+document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+  const selected = dropdown.querySelector('.custom-selected');
+  const options = dropdown.querySelector('.custom-options');
+  selected.addEventListener('click', () => {
+    document.querySelectorAll('.custom-options').forEach(opt => {
+      if (opt !== options) opt.classList.remove('show');
+    });
+    options.classList.toggle('show');
+  });
+  options.querySelectorAll('div').forEach(option => {
+    option.addEventListener('click', () => {
+      selected.textContent = option.textContent;
+      selected.setAttribute("data-value", option.getAttribute("data-value"));
+      options.classList.remove('show');
+      updatePDFDisplay();
+    });
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.custom-dropdown')) {
+    document.querySelectorAll('.custom-options').forEach(opt => opt.classList.remove('show'));
+  }
+});
+
+
+function updatePDFDisplay() {
+  const fach = document.querySelector('#dropdown-fach .custom-selected').getAttribute("data-value");
+  const jahrgang = document.querySelector('#dropdown-jahrgang .custom-selected').getAttribute("data-value");
+  const pdfContainer = document.getElementById("pdf-container");
+  if (!fach || !jahrgang) {
+    pdfContainer.innerHTML = "";
+    return;
+  }
+  const filename = `${fach}-${jahrgang}.pdf`;
+  const fullURL = "https://ein-satz.github.io/web/" + filename;
+  const embed = `<embed src="${fullURL}" type="application/pdf" width="100%" height="600px" />`;
+  pdfContainer.innerHTML = embed;
+}
+
+</script>
+
+
+<script>
+  const path = window.location.pathname;
+  document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.href.includes(path)) link.classList.add('active');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ein Satz – Über das Projekt</title>
+  <link href="ueber-style.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f4f4f4;
+    }
+
+    .ueber-section {
+      background-color: transparent;
+      color: #000; /* dunkles pink */
+      padding: 3rem 1.5rem;
+      max-width: 900px;
+      margin: 0.5rem auto 2rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .ueber-section h2 {
+      color: #e60073;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .ueber-section p {
+      margin-bottom: 1.5rem;
+    }
+
+    .navbar {
+      background-color: #FF6B00;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul style="list-style-type: none; padding-left: 1rem;">
+      <li><a class="nav-link" href="https://ein-satz-gegen-antisemitismus.de/">Startseite</a></li>
+      <li><a class="nav-link" href="https://ein-satz-gegen-antisemitismus.de/finder">⸢ Satz ⸥ - Finder</a></li>
+      <li><a class="nav-link active" href="ueber.html">Über das Projekt</a></li>
+    </ul>
+  </nav>
+  <main class="ueber-section">
+    <h2>Ausgangslage</h2>
+    <p>
+      Juden im sächsischen Schulunterricht begegnen Schülern primär in wenigen Narrativen und Fächern. 
+      Sie werden meist als Opfer, manchmal als Täter, aber kaum als Vorbilder nahezu ausschließlich in den 
+      Fächern Geschichte und Religion thematisiert.
+    </p>
+
+    <h2>⸢ Ein Satz ⸥</h2>
+    <p>
+      Das Projekt stellt Lehrkräften eine einfache Vorlage in Form von ⸢ Ein Satz ⸥ - erweiterten Lehrplänen 
+      zur Verfügung, um jüdische Vorbilder in einer breiten Auswahl schulischer Fächer sichtbar zu machen.
+    </p>
+
+    <h2>Lehrkräfte & Schulen</h2>
+    <p>
+      Das Projekt richtet sich an Lehrkräfte der gymnasialen Oberstufe in den naturwissenschaftlichen Fächern. 
+      Eine Erweiterung auf weitere Klassenstufen ist in Arbeit, eine Ausweitung auf andere Schularten und Fächer 
+      zusätzlich geplant.<br/>
+      Wenn Sie das Projekt unterstützen möchten oder Anregungen haben, schreiben Sie uns gerne an die unten genannte 
+      E-Mail-Adresse.
+    </p>
+
+    <h2>Team</h2>
+    <p>
+      Wir sind ein Team aus Wissenschaft und Schule mit dem Ziel, antisemitismuskritische Bildung praktisch 
+      und fachnah zu stärken.
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      Bei Interesse, Presseanfragen und Feedback wenden Sie sich gerne an uns:<br/>
+      <strong>info@ein-satz-gegen-antisemitismus.de</strong>
+    </p>
+  </main>
+  <script>
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.href.includes(path)) link.classList.add('active');
+    });
+  </script>
+
+  <footer style="text-align: center; margin-top: 3rem; font-size: 0.9rem;">
+    <p>
+      <a href="https://ein-satz-gegen-antisemitismus.de/impressum" style="margin-right: 1.5rem; color: #e60073; text-decoration: none;">Impressum</a>
+      <a href="https://ein-satz-gegen-antisemitismus.de/datenschutz" style="color: #e60073; text-decoration: none;">Datenschutz</a>
+    </p>
+  </footer>
+</body>
+</html>
+

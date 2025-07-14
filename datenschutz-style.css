@@ -1,0 +1,256 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFECEC;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+}
+
+.navbar {
+  background-color: #FF6B00;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  background-color: white;
+  color: #FF6B00;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #ffe3d0;
+}
+
+.navbar a.active {
+  background-color: #ffe3d0;
+}
+
+.fullscreen {
+  height: 100vh;
+  background-color: #ffba97;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.corner-box {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.main-title {
+  font-size: 15vw;
+  color: hotpink;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5vw;
+  color: #333;
+  font-weight: bold;
+}
+
+.corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 10px solid hotpink;
+  z-index: 0;
+}
+
+.top-left {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.bottom-right {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0.5rem auto;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.beispiel-block ul {
+  margin-left: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #FF6B00;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+}
+
+.button {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #FF6B00;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+
+.tag-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+}
+
+.tag-line {
+  gap: 0.25rem 1.25rem;
+}
+
+.tag-item strong {
+  margin-right: 0.15rem;
+}
+
+.tag-line {
+  gap: 0.15rem 1rem;
+}
+
+.tag-item strong {
+  margin-right: 0rem;
+}
+
+.button {
+  margin-bottom: 3rem;
+}
+
+.einsatz-label {
+  border: 1px solid deeppink;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-size: 90%;
+  color: deeppink;
+  font-weight: 500;
+}
+
+.einsatz-label-plain {
+  color: deeppink;
+  font-weight: 500;
+}
+
+.example-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  color: deeppink;
+  margin-bottom: 1rem;
+}
+
+.secondary-banner {
+  background-color: #e83e8c;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  overflow: visible;
+  flex-direction: column;
+}
+
+.secondary-banner .banner-message {
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  .secondary-banner .banner-message {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .secondary-banner .banner-message {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .secondary-banner .banner-message {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .secondary-banner .banner-message {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 360px) {
+  .secondary-banner .banner-message {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 300px) {
+  .secondary-banner .banner-message {
+    font-size: 0.65rem;
+  }
+}
+
+
+.example-frame {
+  background-color: white;
+  border: 3px solid deeppink;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 950px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.button:hover {
+  background-color: #e65c00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
